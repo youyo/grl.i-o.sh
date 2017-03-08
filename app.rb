@@ -5,7 +5,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'faraday'
 require 'json'
-require 'pp'
+require 'liquid'
 
 class Grl
   attr_accessor :data
@@ -35,6 +35,10 @@ class Grl
     end
   end
 
+end
+
+get '/' do
+  liquid :index
 end
 
 get '/:username/:repository' do

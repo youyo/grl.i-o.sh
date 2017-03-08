@@ -4,6 +4,7 @@ GEM
     backports (3.6.8)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
+    liquid (4.0.0)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     rack (1.6.5)
@@ -29,6 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   faraday
+  liquid
   sinatra
   sinatra-contrib
 

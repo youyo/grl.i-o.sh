@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Github Releases Latest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <pre class="i-has-teh-code">
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ # GRL provides a link to the latest Github releases
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ # Returns the download URL contained in the latest release version.
+[youyo@grl.i-o.sh] $ # If there is more than one, it is separated by a comma and returned.
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ function fetch_all_latest_releases(){
+function> local username='heptagon-inc'
+function> local repository='recorder'
+function> curl -s http://grl.i-o.sh/${username}/${repository}
+function> }
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ fetch_all_latest_releases
+https://github.com/heptagon-inc/recorder/releases/download/v0.4.1/recorder_darwin_amd64.zip,https://github.com/heptagon-inc/recorder/releases/download/v0.4.1/recorder_linux_amd64.zip
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ # If you specify a suffix, you can retrieve only matched URLs.
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ function fetch_specific_latest_release(){
+function> local username='heptagon-inc'
+function> local repository='recorder'
+function> local query='darwin_amd64.zip'
+function> curl -s "http://grl.i-o.sh/${username}/${repository}?suffix=${query}"
+function> }
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ fetch_specific_latest_release
+https://github.com/heptagon-inc/recorder/releases/download/v0.4.1/recorder_darwin_amd64.zip
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ # Source Code
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ open 'https://github.com/youyo/grl.i-o.sh'
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $
+[youyo@grl.i-o.sh] $ </pre>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  </body>
+</html>
