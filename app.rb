@@ -41,7 +41,7 @@ get '/:username/:repository' do
   grl = Grl.new
   grl.request_release_data username: params[:username], repository: params[:repository]
   grl.build_response suffix: params[:suffix] if grl.res.status == 200
-  return grl.data.to_json
+  return grl.data.join(',')
 end
 
 not_found do
